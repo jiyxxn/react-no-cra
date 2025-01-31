@@ -1,0 +1,28 @@
+{
+  "env": {
+    // 브라우저 환경과 ES2021 문법을 사용하도록 설정
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended", // 기본 ESLint 규칙 적용
+    "plugin:react/recommended", // React 관련 코드 스타일 적용
+    "plugin:react-hooks/recommended", // React Hooks 관련 코드 검사
+    "prettier" // Prettier와 충돌하는 ESLint 규칙 비활성화
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "prettier/prettier": "error", // Prettier 스타일을 따르지 않으면 ESLint 에러 발생
+    "react/react-in-jsx-scope": "off", // React 17 이상에서는 import React from 'react'가 필요 없으므로 비활성화
+    "no-unused-vars": "warn" // 사용하지 않는 변수가 있으면 경고
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
